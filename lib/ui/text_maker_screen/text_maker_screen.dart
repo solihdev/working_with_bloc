@@ -8,62 +8,61 @@ class TextMakerScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    TextEditingController MyTextController = TextEditingController();
+    TextEditingController myTextController = TextEditingController();
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Text Maker Screen"),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          BlocBuilder<TextMakerCubit, TextMakerState>(builder: (context,state){
-            if(state is UppercaseConverterState){
-              return Text(
-                "Upper cases: ${state.uppercaseConverterResult}",
-                style: const TextStyle(
+        appBar: AppBar(
+          title: const Text("Text Maker Screen"),
+        ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            BlocBuilder<TextMakerCubit, TextMakerState>(
+                builder: (context, state) {
+              if (state is UppercaseConverterState) {
+                return Text(
+                  "Upper cases: ${state.uppercaseConverterResult}",
+                  style: const TextStyle(
+                    fontSize: 24,
+                    color: Colors.black,
+                  ),
+                );
+              } else if (state is LowercaseConverterState) {
+                return Text(
+                  "Lower cases: ${state.lowercaseConverterResult}",
+                  style: const TextStyle(
+                    fontSize: 24,
+                    color: Colors.black,
+                  ),
+                );
+              }
+              return const Text(
+                "Initial state",
+                style: TextStyle(
                   fontSize: 24,
                   color: Colors.black,
                 ),
               );
-            }
-            else if(state is LowercaseConverterState){
-              return Text(
-                "Lower cases: ${state.lowercaseConverterResult}",
-                style: const TextStyle(
-                  fontSize: 24,
-                  color: Colors.black,
-                ),
-              );
-            }
-            return const Text(
-              "Initial state",
-              style: TextStyle(
-                fontSize: 24,
-                color: Colors.black,
-              ),
-            );
-          }),
-          const SizedBox(height: 100,),
-          Padding(
-            padding: const EdgeInsets.only(left: 40,right: 40),
-            child: TextFormField(
-              decoration: const InputDecoration(
-                hintText: "Enter the text",
-                labelText: "Word",
-              ),
-              onChanged: (value){
-                BlocProvider.of<TextMakerCubit>(context).uppercaseConverter(value);
-              },
-              controller: MyTextController,
-              onSaved: (String? value) {
-              },
+            }),
+            const SizedBox(
+              height: 100,
             ),
-          ),
-
-        ],
-      )
-    );
+            Padding(
+              padding: const EdgeInsets.only(left: 40, right: 40),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                  hintText: "Please, enter the text",
+                  labelText: "Word",
+                ),
+                onChanged: (value) {
+                  BlocProvider.of<TextMakerCubit>(context)
+                      .uppercaseConverter(value);
+                },
+                controller: myTextController,
+                onSaved: (String? value) {},
+              ),
+            ),
+          ],
+        ));
   }
 }
