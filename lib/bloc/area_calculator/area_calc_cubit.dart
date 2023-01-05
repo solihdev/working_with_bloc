@@ -5,27 +5,27 @@ import 'area_calc_state.dart';
 class AreaCalcCubit extends Cubit<AreaCalcState> {
   AreaCalcCubit() : super(InitialState(a: 10, b: 10));
 
-  areaOfSquare(int a) {
-    emit(AreaOfSquare(a * a));
+  areaOfSquare({required int a}) {
+    emit(AreaOfSquareState(a * a));
   }
 
-  areaOfRectangle(int a, int b) {
-    emit(AreaOfRectangle(a * b));
+  areaOfRectangle({required int a, required int b}) {
+    emit(AreaOfRectangleState(a * b));
   }
 
-  areaOfCircle(int radius) {
-    emit(AreaOfCircle(pow(radius, 2) * pi));
+  areaOfCircle({required int radius}) {
+    emit(AreaOfCircleState(pow(radius, 2) * pi));
   }
 
-  areaOfTriangle(int h, int base) {
-    emit(AreaOfTriangle(h * base / 2));
+  areaOfTriangle({required int h, required int base}) {
+    emit(AreaOfTriangleState(h * base / 2));
   }
 
-  areaOfParallelogram(int h, int base) {
-    emit(AreaOfTriangle(h * base));
+  areaOfParallelogram({required int h, required int base}) {
+    emit(AreaOfTriangleState(h * base));
   }
 
-  areaOTrapezoid(int h, int base1, int base2) {
-    emit(AreaOfTriangle(h * (base1 + base2) / 2));
+  areaOfTrapezoid({required int h, required int base1, required int base2}) {
+    emit(AreaOfTriangleState(h * (base1 + base2) / 2));
   }
 }

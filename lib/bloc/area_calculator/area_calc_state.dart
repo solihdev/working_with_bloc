@@ -10,38 +10,38 @@ class InitialState extends AreaCalcState {
   final int b;
 }
 
-class AreaOfSquare extends AreaCalcState {
-  AreaOfSquare(this.squareResult);
+class AreaOfSquareState extends AreaCalcState {
+  AreaOfSquareState(this.squareResult);
 
   num squareResult = 0;
 }
 
-class AreaOfRectangle extends AreaCalcState {
-  AreaOfRectangle(this.restangleResult);
+class AreaOfRectangleState extends AreaCalcState {
+  AreaOfRectangleState(this.restangleResult);
 
   num restangleResult = 0;
 }
 
-class AreaOfCircle extends AreaCalcState {
-  AreaOfCircle(this.circleResult);
+class AreaOfCircleState extends AreaCalcState {
+  AreaOfCircleState(this.circleResult);
 
   num circleResult = 0;
 }
 
-class AreaOfTriangle extends AreaCalcState {
-  AreaOfTriangle(this.triangleResult);
+class AreaOfTriangleState extends AreaCalcState {
+  AreaOfTriangleState(this.triangleResult);
 
   num triangleResult = 0;
 }
 
-class AreaOfParallelogram extends AreaCalcState {
-  AreaOfParallelogram(this.parallelogramResult);
+class AreaOfParallelogramState extends AreaCalcState {
+  AreaOfParallelogramState(this.parallelogramResult);
 
   num parallelogramResult = 0;
 }
 
-class AreaOfTrapezoid extends AreaCalcState {
-  AreaOfTrapezoid(this.trapezoidResult);
+class AreaOfTrapezoidState extends AreaCalcState {
+  AreaOfTrapezoidState(this.trapezoidResult);
 
   num trapezoidResult = 0;
 }
