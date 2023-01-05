@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:working_with_bloc/bloc/area_calculator/area_calc_cubit.dart';
+import 'package:working_with_bloc/bloc/text_maker/text_maker_cubit.dart';
 import 'package:working_with_bloc/ui/main_screen/main_screen.dart';
 
 void main() {
@@ -8,6 +9,7 @@ void main() {
     MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => AreaCalcCubit()),
+        BlocProvider(create: (context) => TextMakerCubit()),
       ],
       child: const MyApp(),
     ),

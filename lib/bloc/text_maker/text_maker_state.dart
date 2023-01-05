@@ -14,8 +14,8 @@ class LowercaseConverterState extends TextMakerState {
   String lowercaseConverterResult = "";
 }
 
-class UpperConverterState extends TextMakerState {
-  UpperConverterState(this.uppercaseConverterResult);
+class UppercaseConverterState extends TextMakerState {
+  UppercaseConverterState(this.uppercaseConverterResult);
 
   String uppercaseConverterResult = "";
 }
