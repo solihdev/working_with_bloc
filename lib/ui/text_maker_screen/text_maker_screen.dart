@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:working_with_bloc/bloc/text_maker/text_maker_cubit.dart';
-import 'package:working_with_bloc/bloc/text_maker/text_maker_state.dart';
 
 class TextMakerScreen extends StatelessWidget {
   const TextMakerScreen({Key? key}) : super(key: key);
@@ -17,9 +16,8 @@ class TextMakerScreen extends StatelessWidget {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            BlocBuilder<TextMakerCubit, String>(
-                builder: (context, state) {
-                  return Text(state.toString());
+            BlocBuilder<TextMakerCubit, String>(builder: (context, state) {
+              return Text(state.toString());
             }),
             const SizedBox(
               height: 100,
