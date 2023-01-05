@@ -4,9 +4,14 @@ import 'package:working_with_bloc/bloc/area_calculator/area_calc_cubit.dart';
 import 'package:working_with_bloc/ui/calculator_screen/calculator_screen.dart';
 
 void main() {
-  runApp(MultiBlocProvider(providers: [
-    BlocProvider(create: (context) => AreaCalcCubit()),
-  ], child: const MyApp()));
+  runApp(
+    MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => AreaCalcCubit()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
