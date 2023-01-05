@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:working_with_bloc/bloc/area_calculator/area_calc_cubit.dart';
-import 'package:working_with_bloc/ui/calculator_screen/calculator_screen.dart';
+import 'package:working_with_bloc/ui/main_screen/main_screen.dart';
 
 void main() {
   runApp(
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: const CalculatorScreen(),
+      home: const MainScreen(),
     );
   }
 }
