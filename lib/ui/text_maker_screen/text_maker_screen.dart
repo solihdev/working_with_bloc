@@ -17,32 +17,9 @@ class TextMakerScreen extends StatelessWidget {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            BlocBuilder<TextMakerCubit, TextMakerState>(
+            BlocBuilder<TextMakerCubit, String>(
                 builder: (context, state) {
-              if (state is UppercaseConverterState) {
-                return Text(
-                  "Upper cases: ${state.uppercaseConverterResult}",
-                  style: const TextStyle(
-                    fontSize: 24,
-                    color: Colors.black,
-                  ),
-                );
-              } else if (state is LowercaseConverterState) {
-                return Text(
-                  "Lower cases: ${state.lowercaseConverterResult}",
-                  style: const TextStyle(
-                    fontSize: 24,
-                    color: Colors.black,
-                  ),
-                );
-              }
-              return const Text(
-                "Initial state",
-                style: TextStyle(
-                  fontSize: 24,
-                  color: Colors.black,
-                ),
-              );
+                  return Text(state.toString());
             }),
             const SizedBox(
               height: 100,
